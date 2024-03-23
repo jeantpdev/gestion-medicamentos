@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/perfil.css">
+
+    <title>Perfil</title>
+</head>
+
+<body>
+    <div class="hero">
+
+        <section class="pagina-principal">
+
+            <div class="datos-usuario">
+                <div class="izq">
+                    <div class="foto">
+                        <img src="../img/male-profile.svg" alt="">
+                    </div>
+
+                    <div class="nombre">
+                        <a href="./pages/perfil.html">
+                            <p>Ver perfil</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="med">
+                    <div class="imagen">
+                        <img src="../img/bloque9.png" alt="">
+                    </div>
+                </div>
+
+                <div class="der" id="menuDerecha">
+
+                    <div id="notificacionNumero">
+                    </div>
+
+                    <div class="inicio">
+                       <a href="../index.html"><i class="fa-solid fa-house fa-2x"></i></a> 
+                    </div>
+
+                    <div class="reportar">
+                        <a id="btnAbrirModalReportar"><i class="fa-solid fa-pen-to-square fa-2x"></i></a>
+                    </div>
+
+                    <div class="notificaciones">
+                        <a id="btnAbrirModalNotificaciones"><i class="fa-solid fa-bell fa-2x"></i></a>
+                    </div>
+                    
+                </div>
+
+            </div>
+            <div class="contenedor">
+                <section class="perfil-usuario">
+                    <div class="contenido">
+
+                        <div class="titulo-central">
+                            <p>Información del usuario</p>
+                        </div>
+
+                        <div class="contenedor-foto-perfil">
+                            <div class="foto-perfil">
+                                <img src="../img/male-profile.svg" alt="">
+                            </div>
+                        </div>
+
+                        <div class="contenedor-informacion">
+                            <div class="informacion-perfil" id="informacionPerfil"></div>
+
+                            <div class="botones-perfil">
+                                <button><i class="fa-solid fa-pen-to-square"></i> Editar perfil</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+            </div>
+
+            <div id="targetModalNotificaciones" class="modal-notificaciones">
+                <!-- Modal content -->
+                <div class="contenedor-triangulo">
+                    <div class="triangulo"></div>
+                </div>
+
+                <div class="modal-contenido">
+                    <div class="modal-cabecera">
+                        <span class="btn-cerrar-modal cerrar-modal-notificaciones">&times;</span>
+                        <h2>Centro de notificaciones</h2>
+                    </div>
+
+                    <div class="modal-cuerpo" id="contenedorNotificaciones"></div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/1a5bcd4a97.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/perfil.js"></script>
+</body>
+
+</html>

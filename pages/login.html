@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Estilos -->
+    <link rel="stylesheet" href="../css/login.css">
+    <!-- Estilos externos -->
+
+    <title>Inicio de sesión</title>
+</head>
+<body>
+    
+    <div class="hero">
+
+        <div class="contenedor">
+            <div class="contenido">
+
+                <div class="imagen">
+                    <img src="../img/login.svg" alt="Imagen de bienvenida">
+                </div>
+
+                <div class="textos">
+                    <div class="titulo"> 
+                        <h1>Control y seguimiento de pacientes</h1>
+                    </div>
+                    <div class="imagen-ips">
+                        <img src="../img/coomeva.png" alt="Coomeva logo">
+                    </div>
+                </div>
+
+                <div class="botones">
+                    <div class="boton-iniciar-sesion">
+                        <a href="#" id= "btnAbrirIniciarSesionModal">Iniciar sesión</a>
+                    </div>
+                    <div class="boton-registrarse">
+                        <a href="./registro.html" id = "botonRegistrarse">Registrarse</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="targetModalIniciarSesion" class="modal">
+            <!-- Modal content -->
+            <div class="modal-contenido">
+                <div class="modal-cabecera">
+                    <span class="btn-cerrar-modal cerrar-modal-iniciar-sesion">&times;</span>
+                    <h2>Inicio de sesión</h2>
+                </div>
+
+                <div class="modal-cuerpo">
+
+                    <div class="campo">
+                        <div class="campo-titulo">
+                            <label for="name">Usuario:</label>
+                        </div>
+                        <div class="campo-texto">
+                            <input type="text" id="userName" name="name" minlength="5" maxlength="15">
+                        </div>
+                    </div>  
+
+                    <div class="campo">
+                        <div class="campo-titulo">
+                            <label for="name">Contraseña:</label>
+                        </div>
+
+                        <div class="campo-texto">
+                            <input type="password" id="userPass" name="name" minlength="5" maxlength="15">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal-pie">
+                    <button id="btnIniciarSesionModal">Iniciar sesión</button>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+    <script type = "module" src="../js/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

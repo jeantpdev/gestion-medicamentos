@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- Estilos externos -->
+    <title>Inicio</title>
+</head>
+
+<body>
+
+    <div class="hero">
+
+        <section class="pagina-principal">
+
+            <div class="datos-usuario">
+                <div class="izq">
+                    <div class="foto">
+                        <img src="../img/male-profile.svg" alt="">
+                    </div>
+
+                    <div class="nombre">
+                        <a href="./pages/perfil.html">
+                            <p>Ver perfil</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="med">
+                    <div class="imagen">
+                        <img src="../img/bloque9.png" alt="">
+                    </div>
+                </div>
+
+                <div class="der" id="menuDerecha">
+
+                    <div id="notificacionNumero">
+                    </div>
+
+                    <div class="inicio">
+                        <a href="../index.html"><i class="fa-solid fa-house fa-2x"></i></a>
+                    </div>
+
+                    <div class="reportar">
+                        <a id="btnAbrirModalReportar"><i class="fa-solid fa-pen-to-square fa-2x"></i></a>
+                    </div>
+
+                    <div class="notificaciones">
+                        <a id="btnAbrirModalNotificaciones"><i class="fa-solid fa-bell fa-2x"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="contenedor">
+
+                <div class="calendario">
+                    <header>
+                        <p class="current-date"></p>
+                        <div class="icons">
+                            <span id="prev" class="material-symbols-rounded"><i
+                                    class="fa-solid fa-arrow-left"></i></span>
+                            <span id="next" class="material-symbols-rounded"><i
+                                    class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </header>
+                    <div class="calendar">
+                        <ul class="weeks">
+                            <li>Dom</li>
+                            <li>Lun</li>
+                            <li>Mar</li>
+                            <li>Mie</li>
+                            <li>Jue</li>
+                            <li>Vie</li>
+                            <li>Sab</li>
+                        </ul>
+                        <ul class="days"></ul>
+                    </div>
+                </div>
+
+                <div class="recordatorios">
+
+                    <div class="titulo">
+                        <h1><i class="fa-solid fa-note-sticky"></i> Recordatorios</h1>
+                    </div>
+
+                    <div class="informacion" id="contenedorRecordatorios">
+
+                    </div>
+                    <div class="botones">
+                        <div class="boton-info">
+                            <a id="btnAbrirModalInsertar"><i class="fa-solid fa-plus"></i></a>
+                        </div>
+                        <div class="boton-info">
+                            <a id="btnAbrirModalEliminarRecordatorio"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="targetModalInsertar" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-contenido">
+                        <div class="modal-cabecera">
+                            <span class="btn-cerrar-modal cerrar-modal-insertar">&times;</span>
+                            <h2>Crear un recordatorio</h2>
+                            <p>Registra un medicamento que empezarás a tomar para crear un recordatorio.
+                                Recuerda que en la opcion de "Reportar" puedes enviarle este seguimiento al doctor para
+                                que esté enterado de tu tratamiento.
+                            </p>
+                        </div>
+
+                        <div class="modal-cuerpo">
+
+                            <div class="campo">
+                                <div class="campo-titulo">
+                                    <label for="name">Fecha</label>
+                                </div>
+                                <div class="campo-texto">
+                                    <input type="date" id="fechaInsertarRecordatorio" name="name" minlength="5"
+                                        maxlength="15">
+                                </div>
+                            </div>
+
+                            <div class="campo">
+                                <div class="campo-titulo">
+                                    <label for="name">Hora</label>
+                                </div>
+                                <div class="campo-texto">
+                                    <input type="time" id='horaInsertarRecordatorio'>
+                                </div>
+                            </div>
+
+                            <div class="campo">
+                                <div class="campo-titulo">
+                                    <label for="name">Pastillas/Medicamentos</label>
+                                </div>
+                                <div class="campo-texto">
+                                    <select id="campoMedicamentosCombobox" class="combobox">
+                                        <option>Acetaminofen</option>
+                                        <option>Ibuprofeno</option>
+                                        <option>Atamel</option>
+                                        <option>Teragripxd</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="campo">
+                                <div class="campo-titulo">
+                                    <label for="name">Informacion</label>
+                                </div>
+                                <div class="campo-texto campo-textarea">
+                                    <textarea id="informacionInsertarRecordatorio"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="modal-pie">
+                            <button id="btnInsertarDatosRecordatorio">Crear recordatorio</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="targetModalReportar" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-contenido">
+                        <div class="modal-cabecera">
+                            <span class="btn-cerrar-modal cerrar-modal-reportar">&times;</span>
+                            <h2>Reportar</h2>
+                            <p> Redacta un breve mensaje que quieres reportar</p>
+                        </div>
+
+                        <div class="modal-cuerpo">
+
+                            <div class="campo">
+                                <div class="campo-titulo">
+                                    <label for="name">Sintomas</label>
+                                </div>
+                                <div class="campo-texto">
+                                    <input type="text" id = "sintomasReporte">
+                                </div>
+                            </div>
+
+                            <div class="campo">
+                                <div class="campo-titulo">
+                                    <label for="name">Enfermedad</label>
+                                </div>
+                                <div class="campo-texto">
+                                    <input type="text" id="enfermedadReporte">
+                                </div>
+                            </div>
+
+                            <div class="campo">
+                                <div class="campo-titulo">
+                                    <label for="name">Redacta una breve descripción a enviar al doctor</label>
+                                </div>
+                                <div class="campo-texto campo-textarea">
+                                    <textarea name="" id="descripcionReporte"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="modal-pie">
+                            <button id="btnReportarDatosModal">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="targetModalAgregarRecordatorio" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-contenido">
+                        <div class="modal-cabecera">
+                            <span class="btn-cerrar-modal cerrar-modal-agregar-recordatorio">&times;</span>
+                            <h2">Agregar recordatorio</h2>
+                                <p>Seleccion</p>
+                        </div>
+
+                        <div class="modal-cuerpo">
+
+                            <div class="campo">
+                                <div class="campo-titulo">
+                                    <label for="name">Malestar/Enfermedad</label>
+                                </div>
+                                <div class="campo-texto">
+                                    <select id="campoMalestarComboboxReportar" class="combobox">
+                                        <option>Dolor de cabeza</option>
+                                        <option>Malestar general</option>
+                                        <option>Vomitos</option>
+                                        <option>Nosexd</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="campo">
+                                <div class="campo-titulo">
+                                    <label for="name">Redacta una breve descripción del reporte a enviar al
+                                        doctor</label>
+                                </div>
+                                <div class="campo-texto campo-textarea">
+                                    <textarea></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="modal-pie">
+                            <button id="btnReportarDatosModal">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="targetModalEliminarRecordatorio" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-contenido">
+                        <div class="modal-cabecera">
+                            <span class="btn-cerrar-modal cerrar-modal-eliminar-recordatorio">&times;</span>
+                            <h2 class="modal__titulo">Eliminar recordatorio</h2>
+                            <p class="modal__descripcion">Selecciona el id del recordatorio que vas a querer eliminar
+                            </p>
+                        </div>
+
+                        <div class="modal-cuerpo">
+
+                            <div class="container">
+                                <div class="botones">
+                                    <div class="boton-busqueda">
+                                        <label for="idInput">id recordatorio:</label>
+                                        <input type="text" id="idRecordatorioEliminar">
+                                        <a id="buscarButton" class="buscar__boton">Eliminar</a>
+                                    </div>
+                                </div>
+                                <div class="tabla-tickets">
+                                    <div class="tabla__tickets">
+                                        <table id="tablaTickets">
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tabla-paginacion">
+                                    <div id="paginationContainer" class="tabla__paginacion"></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="modal-pie">
+                            <button id="btnReportarDatosModal">Salir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="targetModalNotificaciones" class="modal-notificaciones">
+                    <!-- Modal content -->
+                    <div class="contenedor-triangulo">
+                        <div class="triangulo"></div>
+                    </div>
+
+                    <div class="modal-contenido">
+                        <div class="modal-cabecera">
+                            <span class="btn-cerrar-modal cerrar-modal-notificaciones">&times;</span>
+                            <h2>Centro de notificaciones</h2>
+                        </div>
+
+                        <div class="modal-cuerpo" id="contenedorNotificaciones"></div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/1a5bcd4a97.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
